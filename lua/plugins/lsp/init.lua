@@ -136,7 +136,7 @@ return {
           module.builtins.formatting.stylua,
           module.builtins.formatting.black,
           -- module.builtins.formatting.isort,
-          module.builtins.formatting.rustfmt,
+          -- module.builtins.formatting.rustfmt,
           -- module.builtins.diagnostics.mypy,
           module.builtins.diagnostics.pylint,
         },

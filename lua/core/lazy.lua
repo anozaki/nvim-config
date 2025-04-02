@@ -9,6 +9,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 plugins = {
+  { "nvim-neotest/nvim-nio" },
   { import = "plugins" },
   { import = "plugins.lsp" },
 }

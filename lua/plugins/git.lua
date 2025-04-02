@@ -16,36 +16,11 @@ return {
 		lazy = false,
 		opts = {
 			signs = {
-				add = {
-					hl = "GitSignsAdd",
-					text = BoldLineLeft,
-					numhl = "GitSignsAddNr",
-					linehl = "GitSignsAddLn",
-				},
-				change = {
-					hl = "GitSignsChange",
-					text = BoldLineLeft,
-					numhl = "GitSignsChangeNr",
-					linehl = "GitSignsChangeLn",
-				},
-				delete = {
-					hl = "GitSignsDelete",
-					text = Triangle,
-					numhl = "GitSignsDeleteNr",
-					linehl = "GitSignsDeleteLn",
-				},
-				topdelete = {
-					hl = "GitSignsDelete",
-					text = Triangle,
-					numhl = "GitSignsDeleteNr",
-					linehl = "GitSignsDeleteLn",
-				},
-				changedelete = {
-					hl = "GitSignsChange",
-					text = BoldLineLeft,
-					numhl = "GitSignsChangeNr",
-					linehl = "GitSignsChangeLn",
-				},
+				add = { text = BoldLineLeft },
+				change = { text = BoldLineLeft },
+				delete = { text = Triangle },
+				topdelete = { text = Triangle },
+				changedelete = { text = BoldLineLeft },
 			},
 			signcolumn = true,
 			numhl = false,
@@ -76,7 +51,6 @@ return {
 				row = 0,
 				col = 1,
 			},
-			yadm = { enable = false },
 		},
 		keys = function()
 			local gs = require("gitsigns")
