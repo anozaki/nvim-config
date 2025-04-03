@@ -109,10 +109,10 @@ return {
 				on_attach = common_on_attach,
 				capabilities = lsp_capabilities,
 			})
-      lspconfig.yamlls.setup({
+			lspconfig.yamlls.setup({
 				on_attach = common_on_attach,
 				capabilities = lsp_capabilities,
-      })
+			})
 
 			vim.lsp.set_log_level("debug")
 
@@ -182,7 +182,12 @@ return {
 			"nvimtools/none-ls.nvim",
 		},
 		opts = {
-      automatic_installation = true
+			ensure_installed = {
+				-- "black",
+				-- "isort",
+				-- "pylint",
+			},
+			-- automatic_installation = true
 		},
 	},
 }
