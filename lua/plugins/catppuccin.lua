@@ -5,10 +5,8 @@ return {
     name = "catppuccin",
     lazy = false,
     priority = 1000,
+    opts = { flavor = "macchiato" },
     config = function()
-      require("catppuccin").setup({
-        flavor = "macchiato"
-      })
       vim.cmd.colorscheme "catppuccin"
     end,
   }

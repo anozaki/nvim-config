@@ -4,7 +4,7 @@ return {
 	},
 	{
 		"mfussenegger/nvim-dap-python",
-    ft = "python",
+		ft = "python",
 		config = function()
 			require("dap-python").setup("python")
 		end,
@@ -43,6 +43,7 @@ return {
 			}
 		end,
 	},
+	{ "nvim-neotest/nvim-nio" },
 	{
 		"nvim-neotest/neotest",
 		dependencies = {
