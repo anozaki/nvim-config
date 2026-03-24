@@ -53,35 +53,26 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		main = "lspconfig.configs",
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 		},
 		config = function()
 			local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local mason_lspconfig = require("mason-lspconfig")
-			local lspconfig = require("lspconfig")
 			local util = require("lspconfig/util")
 
-			mason_lspconfig.setup_handlers({
-				-- will get called for all lsp setup
-				function(server_name)
-					lspconfig[server_name].setup({
-						on_attach = common_on_attach,
-						capabilities = lsp_capabilities,
-					})
-				end,
+			vim.lsp.config("lua_ls", {
+				on_attach = common_on_attach,
+				capabilities = lsp_capabilities,
+				filetypes = { "lua" },
 			})
+			vim.lsp.enable("lua_ls")
 
-			lspconfig.lua_ls.setup({
+			vim.lsp.config("pyright", {
 				on_attach = common_on_attach,
 				capabilities = lsp_capabilities,
-				filetype = { "lua" },
-			})
-			lspconfig.pyright.setup({
-				on_attach = common_on_attach,
-				capabilities = lsp_capabilities,
-				filetype = { "python" },
+				filetypes = { "python" },
 				settings = {
 					python = {
 						analysis = {
@@ -92,10 +83,12 @@ return {
 					},
 				},
 			})
-			lspconfig.rust_analyzer.setup({
+			vim.lsp.enable("pyright")
+
+			vim.lsp.config("rust_analyzer", {
 				on_attach = common_on_attach,
 				capabilities = lsp_capabilities,
-				filetype = { "rust" },
+				filetypes = { "rust" },
 				root_dir = util.root_pattern("Cargo.toml"),
 				settings = {
 					["rust_analyzer"] = {
@@ -105,14 +98,19 @@ return {
 					},
 				},
 			})
-			lspconfig.bitbake_ls.setup({
+			vim.lsp.enable("rust_analyzer")
+
+			vim.lsp.config("bitbake_language_server", {
 				on_attach = common_on_attach,
 				capabilities = lsp_capabilities,
 			})
-			lspconfig.yamlls.setup({
+			vim.lsp.enable("bitbake_language_server")
+
+			vim.lsp.config("yamlls", {
 				on_attach = common_on_attach,
 				capabilities = lsp_capabilities,
 			})
+			vim.lsp.enable("yamlls")
 
 			vim.lsp.set_log_level("debug")
 
