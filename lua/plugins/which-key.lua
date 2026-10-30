@@ -6,6 +6,7 @@ return {
     config = function()
       local wk = require("which-key")
       wk.add({
+        { "<leader>a",  group = "Claude" },
         { "<leader>d",  group = "Debug" },
         { "<leader>dC", "<cmd>lua require'dap'.run_to_cursor()<cr>",          desc = "Run To Cursor" },
         { "<leader>dU", "<cmd>lua require'dapui'.toggle({reset = true})<cr>", desc = "Toggle UI" },
@@ -26,7 +27,7 @@ return {
         { "<leader>fH", "<cmd>Telescope highlights<cr>",                      desc = "Find highlight groups" },
         { "<leader>fM", "<cmd>Telescope man_pages<cr>",                       desc = "Man Pages" },
         { "<leader>fR", "<cmd>Telescope registers<cr>",                       desc = "Registers" },
-        { "<leader>fb", "<cmd>Telescope git_branches<cr>",                    desc = "Checkout branch" },
+        { "<leader>gb", "<cmd>Telescope git_branches<cr>",                    desc = "Checkout branch" },
         { "<leader>fc", "<cmd>Telescope colorscheme<cr>",                     desc = "Colorscheme" },
         { "<leader>ff", "<cmd>Telescope find_files<cr>",                      desc = "Find File" },
         { "<leader>fh", "<cmd>Telescope help_tags<cr>",                       desc = "Find Help" },

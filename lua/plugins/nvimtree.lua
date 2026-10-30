@@ -13,6 +13,7 @@ return {
 		},
 		keys = {
 			{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Open Tree" },
+			{ "<leader>E", "<cmd>NvimTreeFindFileToggle<cr>", desc = "Tree at current file" },
 		},
 	},
 	{
